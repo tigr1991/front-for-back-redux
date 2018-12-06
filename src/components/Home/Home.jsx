@@ -7,11 +7,12 @@ import styles from './Home.styl'
 
 const Home = () => (
   <div className={styles.wrapper}>
-    <CreateForm />
-    <hr />
-    <TodosList />
-    <hr />
-    <DoneTodosList />
+    <h1>Add new ticket</h1>
+      <CreateForm />
+      <h1>In progress</h1>
+      <TodosList />
+      <h1>Done</h1>
+      <DoneTodosList />
   </div>
 )
 

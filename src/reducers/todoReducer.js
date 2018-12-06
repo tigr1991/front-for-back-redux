@@ -14,6 +14,7 @@ const byId = (state = initialState, action) => {
       return rest
     }
     case types.CHANGE_TODO: {
+      console.log(data)
       return {
         ...state,
         [id]: { ...state[id], ...data },

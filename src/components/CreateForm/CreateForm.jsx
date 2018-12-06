@@ -1,30 +1,47 @@
 import React from 'react'
+import styles from './CreateForm.styl'
+import PrioritySelector from '../PrioritySelector/PrioritySelector.jsx'
 
 export default class CreateForm extends React.Component {
-  state = { value: '' }
+
+  state = {
+    todoText: '',
+    todoPriority: 'middle',
+  }
 
   handleSubmit = () => {
-    this.props.onCreate({ text: this.state.value })
+    this.props.onCreate({
+      text: this.state.todoText,
+      priority: this.state.todoPriority,
+    })
     this.setState({
-      value: '',
+      todoText: '',
+      todoPriority: 'middle',
     })
   }
 
-  handleChange = e => {
+  handleTextChange = e => {
     this.setState({
-      value: e.target.value,
+      todoText: e.target.value,
+    })
+  }
+
+  handlePriorityChange = e => {
+    this.setState({
+      todoPriority: e.target.value,
     })
   }
 
   render() {
-    const { value } = this.state
+    const { todoText, todoPriority } = this.state
     return (
-      <React.Fragment>
-        <input type="text" value={value} onChange={this.handleChange} />
-        <button disabled={!value} onClick={this.handleSubmit}>
+      <div className={`${styles.panel} padding-a br-lg shadow-lg p-a-md`}>
+        <PrioritySelector handlePriorityChange={this.handlePriorityChange} priority={todoPriority}/>
+        <input type="text" value={todoText} onChange={this.handleTextChange} className="br-md  m-t-2"/>
+        <button disabled={!todoText} onClick={this.handleSubmit} className="br-md">
           Submit
         </button>
-      </React.Fragment>
+      </div>
     )
   }
 }

@@ -5,8 +5,8 @@ const path = require('path')
 module.exports = {
   entry: [
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:9000',
-    'webpack/hot/only-dev-server',
+    // 'webpack-dev-server/client?http://localhost:9000',
+    // 'webpack/hot/only-dev-server',
     path.join(__dirname, 'src'),
   ],
 
