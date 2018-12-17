@@ -1,13 +1,8 @@
 import * as types from 'constants/actionTypes'
 
-export const createTodo = data => dispatch => {
-  dispatch({ type: types.CREATE_TODO, data })
-}
+export const createTodo = data => ({ type: types.CREATE_TODO, data })
 
-export const deleteTodo = id => dispatch => {
-  dispatch({ type: types.DELETE_TODO, id })
-}
+export const deleteTodo = id => ({ type: types.DELETE_TODO, id })
 
-export const changeTodo = (id, data) => dispatch => {
-  dispatch({ type: types.CHANGE_TODO, id, data })
-}
+export const changeTodo = (id, data) => ({ type: types.CHANGE_TODO, id, data })
+

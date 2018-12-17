@@ -1,8 +1,9 @@
 import React from 'react'
+import Profile from 'containers/ProfileContainer'
 
 const About = () => (
 	<div>
-		About page
+		<Profile/>
 	</div>
 )
 
